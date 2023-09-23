@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="reporte1" language="groovy" pageWidth="612" pageHeight="792" columnWidth="555" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="2e5c4f12-c440-4104-93e2-a33cc8db56a3">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString>
+		<![CDATA[SELECT
+     producto_joyeria.`IDproducto_joyeria` AS producto_joyeria_IDproducto_joyeria,
+     producto_joyeria.`nombre_producto` AS producto_joyeria_nombre_producto,
+     producto_joyeria.`descripcion_producto` AS producto_joyeria_descripcion_producto,
+     producto_joyeria.`precio` AS producto_joyeria_precio,
+     producto_joyeria.`ID_categoria` AS producto_joyeria_ID_categoria
+FROM
+     `producto_joyeria` producto_joyeria]]>
+	</queryString>
+	<field name="producto_joyeria_IDproducto_joyeria" class="java.lang.Integer"/>
+	<field name="producto_joyeria_nombre_producto" class="java.lang.String"/>
+	<field name="producto_joyeria_descripcion_producto" class="java.lang.String"/>
+	<field name="producto_joyeria_precio" class="java.math.BigDecimal"/>
+	<field name="producto_joyeria_ID_categoria" class="java.lang.Integer"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<staticText>
+				<reportElement x="69" y="14" width="334" height="49" uuid="4d61b039-a2fc-4bce-b7ed-4d89aa084672"/>
+				<textElement textAlignment="Center">
+					<font size="24"/>
+				</textElement>
+				<text><![CDATA[Reporte De Programacion]]></text>
+			</staticText>
+			<textField pattern="EEEEE dd MMMMM yyyy">
+				<reportElement x="465" y="17" width="100" height="20" uuid="cffaff9f-4c6a-475b-902c-8dbf9c302d84"/>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+		</band>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="61" splitType="Stretch">
+			<staticText>
+				<reportElement x="18" y="2" width="100" height="20" uuid="de6b3adf-e15e-478d-9114-0eaa3e99bbeb"/>
+				<text><![CDATA[producto_joyeria_IDproducto_joyeria]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="137" y="0" width="100" height="20" uuid="fa736cc5-0728-4613-974c-f1480db759eb"/>
+				<text><![CDATA[producto_joyeria_nombre_producto]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="257" y="2" width="100" height="20" uuid="f779bd24-13cf-4b0c-9ff8-be1bc543544a"/>
+				<text><![CDATA[producto_joyeria_descripcion_producto]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="371" y="2" width="100" height="20" uuid="47555a05-5e26-4d40-90bd-e4c3b1a3890b"/>
+				<text><![CDATA[producto_joyeria_precio]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="485" y="2" width="100" height="20" uuid="51f467a1-77bd-42ce-9879-14df865869cd"/>
+				<text><![CDATA[producto_joyeria_ID_categoria]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="64" splitType="Stretch">
+			<textField>
+				<reportElement x="18" y="12" width="100" height="20" uuid="40f9e430-c6f5-4753-9e3e-5fb314288859"/>
+				<textFieldExpression><![CDATA[$F{producto_joyeria_IDproducto_joyeria}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="137" y="12" width="100" height="20" uuid="a100fd8b-cf6c-43f5-8c01-27870600943f"/>
+				<textFieldExpression><![CDATA[$F{producto_joyeria_nombre_producto}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="257" y="12" width="100" height="20" uuid="32fb5b05-6396-486f-99b8-9cd8ddf854f1"/>
+				<textFieldExpression><![CDATA[$F{producto_joyeria_descripcion_producto}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="371" y="12" width="100" height="20" uuid="f9294501-5675-46de-b826-ead06382e278"/>
+				<textFieldExpression><![CDATA[$F{producto_joyeria_precio}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="485" y="12" width="100" height="20" uuid="f226992c-0086-44ed-bb1e-b6f897f55ecd"/>
+				<textFieldExpression><![CDATA[$F{producto_joyeria_ID_categoria}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch">
+			<textField>
+				<reportElement x="237" y="19" width="80" height="20" uuid="b141add1-e744-49b0-a619-906594d2448a"/>
+				<textElement textAlignment="Right"/>
+				<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+			</textField>
+			<textField evaluationTime="Report">
+				<reportElement x="317" y="19" width="40" height="20" uuid="4b2fec2a-dd41-4661-8b04-6686851bd774"/>
+				<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>
